@@ -1,6 +1,8 @@
 #-*- coding: utf-8 -*-
 import sys
 from characters import *
+from items import *
+from text import *
 
 def show_instructions():
   print('''
@@ -27,31 +29,11 @@ def show_instructions():
             ================
             ''')
 inventory = []
-def show_sword():
-    print('''         /| ________________
-                O|===|* >________________>
-                      \|
-    ''')
-def show_potion():
-  print('''             _____
-                       `.___,'
-                        (___)
-                        <   >
-                         ) (
-                        /`-.\
-                       /     \
-                      / _    _\
-                     :,' `-.' `:
-                     |         |
-                     :         ;
-                      \       /
-                       `.___.'
-                       ''')
-
-
 
 def red_door():
+
   dragon();
+
   if len(inventory)==0:
     print('''
          You have nothing in you inventory
@@ -104,21 +86,9 @@ def add_to_inventory(item):
 
 
 def game_over():
-  print('''
-          You were defeated!!!!!!!!!
-      ''')
-  print('''
-                   *              )               (     
-           (        (      (  `          ( /(               )\ )  
-           )\ )     )\     )\))(   (     )\()) (   (   (   (()/(  
-          (()/(  ((((_)(  ((_)()\  )\   ((_)\  )\  )\  )\   /(_)) 
-           /(_))_ )\ _ )\ (_()((_)((_)    ((_)((_)((_)((_) (_))   
-          (_)) __|(_)_\(_)|  \/  || __|  / _ \\ \ / / | __|| _ \  
-            | (_ | / _ \  | |\/| || _|  | (_) |\ V /  | _| |   /  
-             \___|/_/ \_\ |_|  |_||___|  \___/  \_/   |___||_|_\  
-                                                                                                                                             
-            ''')
+  game_over_text();
   sys.exit()
+
 def main():
     show_instructions()
     print('''
